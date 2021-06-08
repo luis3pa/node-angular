@@ -1,0 +1,18 @@
+<nb-card status="primary">
+    <nb-card-header>Agregar persona</nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="form" (ngSubmit)="send()" class=" ">
+            <nb-select placeholder="Selecione el padre" formControlName="id_father">
+                <nb-option *ngFor="let person of persons" value="{{person.id}}">{{person.fullname}}</nb-option>
+            </nb-select>
+            <nb-select placeholder="Selecione la madre" formControlName="id_mother">
+                <nb-option *ngFor="let person of persons" value="{{person.id}}">{{person.fullname}}</nb-option>
+            </nb-select>
+            <input nbInput placeholder="Fecha de nacimiento" [nbDatepicker]="birth" formControlName="birth">
+            <nb-datepicker #birth></nb-datepicker>
+            <input type="text" nbInput fullWidth status="primary" placeholder="Nombre completo"
+                formControlName="fullname">
+            <button nbButton status="warning" type="submit" [disabled]="form.invalid">Agregar persona</button>
+        </form>
+    </nb-card-body>
+</nb-card>

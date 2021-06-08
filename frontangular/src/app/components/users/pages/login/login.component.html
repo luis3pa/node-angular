@@ -1,0 +1,9 @@
+  <nb-card status="success">
+    <nb-card-header>Personas</nb-card-header>
+    <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="users"></ng2-smart-table>
+    </nb-card-body>
+    <nb-card-footer>
+      <button nbButton status="success" (click)="jump()">Agregar</button>
+    </nb-card-footer>
+  </nb-card>
